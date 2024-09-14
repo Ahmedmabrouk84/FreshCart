@@ -1,0 +1,98 @@
+<nav class="navbar navbar-expand-lg d-flex align-items-center bg-body-tertiary">
+  <div class="container">
+    <a class="navbar-brand" routerLink="home">
+      <img
+        src="./assets/images/freshcart-logo.svg"
+        alt="ouer logo his Name Fresh cart"
+      />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="home" routerLinkActive="active-link"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="products"
+            routerLinkActive="active-link"
+            >Products</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="categories"
+            routerLinkActive="active-link"
+            >Categories</a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="brands" routerLinkActive="active-link"
+            >Brands</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="wishlist" routerLinkActive="active-link"
+            ><span class="wishlist-icon"> <i class=" f-weight-600 fa-solid fa-hand-holding-heart "></i></span></a
+          >
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="cart" routerLinkActive="active-link"
+            ><span><i class="fa-solid fa-cart-flatbed-suitcase cart-icon"></i></span>
+          <span class="badge bg-info ">{{navCountNumber()}}</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <span><i class="fa-brands fa-instagram"></i></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <span><i class="fa-brands fa-facebook"></i></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <span><i class="fa-brands fa-tiktok"></i></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <span><i class="fa-brands fa-twitter"></i></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <span><i class="fa-brands fa-linkedin"></i></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <span><i class="fa-brands fa-youtube"></i></span>
+          </a>
+        </li>
+        <li class="nav-item cr">
+          <a class="nav-link" (click)="_AuthService.logOut()">SingOut </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

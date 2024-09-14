@@ -1,0 +1,24 @@
+
+section .row span .icon{
+    font-size: 20px;
+    cursor: pointer;
+}
+section h1{
+    text-align: center;
+    position: relative;
+}
+section h1::after{
+    position: absolute;
+    content: '';
+    background-color: #0AAD0A;
+    width: 3.5rem;
+    height: .3125rem;
+    border-bottom-right-radius: .625rem;
+    border-top-left-radius: .625rem;
+    left:  10%;
+    bottom: -0.625rem;
+    transition: 0.6s;
+}
+section h1:hover::after{
+    width: 6.25rem;
+}

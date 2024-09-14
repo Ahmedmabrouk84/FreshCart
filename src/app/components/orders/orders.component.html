@@ -1,0 +1,111 @@
+<section class="bg-main-light w-75 mx-auto my-4 rounded-4 shadow p-4">
+  <h1 class="h2 f-weight-800 text-center text-main">Shipping Address</h1>
+
+  <form [formGroup]="orders" (ngSubmit)="orderSubmit()">
+    <div class="my-2">
+      <label for="details">details</label>
+      <textarea
+        [ngClass]="{
+          'is-valid':
+            !orders.get('details')?.errors &&
+            (orders.get('details')?.touched || orders.get('details')?.dirty),
+          'is-invalid':
+            orders.get('details')?.errors &&
+            (orders.get('details')?.touched || orders.get('details')?.dirty)
+        }"
+        id="details"
+        formControlName="details"
+        id="details"
+        type="details"
+        class="form-control mt-1"
+      ></textarea>
+
+      @if (orders.get('details')?.errors&&(orders.get('details')?.touched ||
+      orders.get('details')?.dirty) ) {
+      <div class="alert alert-danger">
+        @if (orders.get('details')?.getError('required')) {
+        <p class="m-0 text-capitalize">details is Required</p>
+        } @else if (orders.get('details')?.getError('pattern')) {
+        <p class="m-0 text-capitalize">
+          INformation Should Be At Least 3 Characters
+        </p>
+        }
+      </div>
+
+      }
+    </div>
+
+    <div class="my-2">
+      <label for="phone">Phone</label>
+      <input
+        [ngClass]="{
+          'is-valid':
+            !orders.get('phone')?.errors &&
+            (orders.get('phone')?.touched || orders.get('phone')?.dirty),
+          'is-invalid':
+            orders.get('phone')?.errors &&
+            (orders.get('phone')?.touched || orders.get('phone')?.dirty)
+        }"
+        formControlName="phone"
+        id="phone"
+        type="tel"
+        class="form-control mt-1"
+      />
+
+      @if (orders.get('phone')?.errors&& (orders.get('phone')?.touched ||
+      orders.get('phone')?.dirty) ) {
+      <div class="alert alert-danger">
+        @if (orders.get('phone')?.getError('required')) {
+        <p class="m-0 text-capitalize">phone is Required</p>
+        } @else if (orders.get('phone')?.getError('pattern')) {
+        <p class="m-0 text-capitalize">Accept only egypt phone numbers</p>
+        }
+      </div>
+
+      }
+    </div>
+
+    <div class="my-2">
+      <label for="city">City</label>
+      <input
+        [ngClass]="{
+          'is-valid':
+            !orders.get('city')?.errors &&
+            (orders.get('city')?.touched || orders.get('city')?.dirty),
+          'is-invalid':
+            orders.get('city')?.errors &&
+            (orders.get('city')?.touched || orders.get('city')?.dirty)
+        }"
+        id="city"
+        formControlName="city"
+        id="city"
+        type="text"
+        class="form-control mt-1"
+      />
+
+      @if (orders.get('city')?.errors&&(orders.get('city')?.touched ||
+      orders.get('city')?.dirty) ) {
+      <div class="alert alert-danger">
+        @if (orders.get('city')?.getError('required')) {
+        <p class="m-0 text-capitalize">Your City is required</p>
+        } @else if (orders.get('city')?.getError('pattern')) {
+        <p class="m-0 text-capitalize">
+          Should Write Your City To get Your Orders
+        </p>
+        }
+      </div>
+
+      }
+    </div>
+
+    <button
+      [disabled]="orders.invalid || isLodaing"
+      class="btn-main d-block mx-auto mt-3 f-weight-600"
+    >
+      Check Order
+       @if (isLodaing) {
+      <span><i class="fas fa-spin fa-spinner ps-1"></i></span>
+      }
+    </button>
+  </form>
+</section>

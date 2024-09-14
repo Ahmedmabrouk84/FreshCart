@@ -1,0 +1,101 @@
+
+<!-- Slider number 1 -->
+<section>
+  <div class="row g-0">
+    <div class="col-md-9">
+      <div class="slider_Right">
+        <owl-carousel-o [options]="customOptionsMan">
+          <ng-template carouselSlide>
+            <img
+              src="./assets/images/img1.avif"
+              height="400px"
+              class="w-100"
+              alt="this is a slider"
+            />
+          </ng-template>
+          <ng-template carouselSlide>
+            <img
+              src="./assets/images/img2.avif"
+              height="400px"
+              class="w-100"
+              alt="this is a slider"
+            />
+          </ng-template>
+          <ng-template carouselSlide>
+            <img
+              src="./assets/images/img3.avif"
+              height="400px"
+              class="w-100"
+              alt="this is a slider"
+            />
+          </ng-template>
+          <ng-template carouselSlide>
+            <img
+              src="./assets/images/img4.avif"
+              height="400px"
+              class="w-100"
+              alt="this is a slider"
+            />
+          </ng-template>
+          <ng-template carouselSlide>
+            <img
+              src="./assets/images/img5.avif"
+              height="400px"
+              class="w-100"
+              alt="this is a slider"
+            />
+          </ng-template>
+          <ng-template carouselSlide>
+            <img
+              src="./assets/images/img6.avif"
+              height="400px"
+              class="w-100"
+              alt="this is a slider"
+            />
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="img-left">
+        <img
+          src="./assets/images/grocery-banner-2.jpeg"
+          height="200px"
+          class="w-100"
+          alt=""
+        />
+        <img
+          src="./assets/images/slider-image-1.jpeg"
+          height="200px"
+          class="w-100"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--  Slider Dunamic 2 -->
+<section>
+  <div class="my-2">
+    <h2 class="text-main text-center">Popular Categories</h2>
+
+    <owl-carousel-o [options]="customOptionsCategories">
+      <ng-container>
+        @for (categorey of categoriesList(); track categorey._id) {
+        <ng-template carouselSlide>
+          <div>
+            <img
+              [src]="categorey.image"
+              height="250px"
+              [alt]="categorey.name"
+              class="w-100"
+            />
+            <h3 class="h6 text-main my-2 text-center">{{ categorey.name }}</h3>
+          </div>
+        </ng-template>
+        }
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+</section>

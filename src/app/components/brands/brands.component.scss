@@ -1,0 +1,23 @@
+section h1{
+    font-weight: 800;
+    text-align: center;
+    margin-block: 1.40rem;
+    position: relative;
+}
+
+section h1::after{
+    position: absolute;
+    content: '';
+    background-color: #0AAD0A;
+    width: 3.125rem;
+    height: .3125rem;
+    border-bottom-right-radius: .625rem;
+    border-top-left-radius: .625rem;
+    left:  46%;
+    bottom: -0.625rem;
+    transition: 0.6s;
+}
+
+section h1:hover::after{
+    width: 6.25rem;
+}

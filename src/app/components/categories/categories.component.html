@@ -1,0 +1,19 @@
+<section>
+  <h1 class="text-main my-3">All Categories</h1>
+  <div class="row g-3 mb-4 mt-3">
+    @for (categorey of categoriesList(); track categorey._id) {
+
+    <div class="col-md-6 col-lg-3">
+      <div class="product ">
+        <img
+          [src]="categorey.image"
+          height="320px"
+          [alt]="categorey.name"
+          class="w-100"
+        />
+        <h3 class="h6 text-main my-2 text-center">{{ categorey.name }}</h3>
+      </div>
+    </div>
+    }
+  </div>
+</section>

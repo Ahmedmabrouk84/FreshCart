@@ -1,0 +1,77 @@
+<section class="bg-main-light p-3 my-5 shadow rounded-4">
+  <h1 class="h2 text-main f-weight-600 mb-3">Login Now:</h1>
+
+  <form [formGroup]="loginForms" (ngSubmit)="loginForm()">
+    <div class="my-3">
+      <label for="email"><span class="text-main"><i class="fa-solid fa-user"></i></span> Email </label>
+      <input
+        [ngClass]="{
+          'is-valid':
+            !loginForms.get('email')?.errors &&
+            (loginForms.get('email')?.touched ||
+              loginForms.get('email')?.dirty),
+          'is-invalid':
+            loginForms.get('email')?.errors &&
+            (loginForms.get('email')?.touched || loginForms.get('email')?.dirty)
+        }"
+        formControlName="email"
+        type="email"
+        id="email"
+        class="form-control mt-1"
+      />
+
+      @if (loginForms.get('email')?.errors && (loginForms.get('email')?.touched
+      || loginForms.get('email')?.dirty)) {
+      <div class="alert alert-danger">
+        @if (loginForms.get('email')?.getError('required') ) {
+        <p class="m-0">Email is Required</p>
+        } @if (loginForms.get('email')?.getError('email') ) {
+        <p class="m-0">Enter Valid Email</p>
+        }
+      </div>
+      }
+    </div>
+    <div class="my-3">
+      <label for="password"><span class="text-main"><i class="fa-solid fa-key"></i></span> Password</label>
+      <input
+        [ngClass]="{
+          'is-valid':
+            !loginForms.get('password')?.errors &&
+            (loginForms.get('password')?.touched ||
+              loginForms.get('password')?.dirty),
+          'is-invalid':
+            loginForms.get('password')?.errors &&
+            (loginForms.get('password')?.touched ||
+              loginForms.get('password')?.dirty)
+        }"
+        type="password"
+        formControlName="password"
+        id="password"
+        class="form-control mt-1"
+      />
+      @if (loginForms.get('password')?.errors
+      &&(loginForms.get('password')?.touched ||
+      loginForms.get('password')?.dirty)) {
+      <div class="alert alert-danger">
+        @if (loginForms.get('password')?.getError('required') ) {
+
+        <p class="m-0">Password is Required</p>
+        } @if (loginForms.get('password')?.getError('pattern') ) {
+        <p class="m-0">must be at least 6 chars</p>
+        }
+      </div>
+      }
+    </div>
+    <div class="my-2">
+      <div class="d-flex justify-content-between align-items-center mt-3">
+        <p class="text-main cr f-weight-600 p-2" routerLink="/forgot">
+          <span><i class="fa-solid fa-lock"></i></span>
+          Forgot Password 
+        </p>
+        <button [disabled]="loginForms.invalid" class="btn-main d-block">
+          LogIn
+        </button>
+      </div>
+    </div>
+  </form>
+</section>

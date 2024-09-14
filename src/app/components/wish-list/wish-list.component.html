@@ -1,0 +1,23 @@
+<section class="bg-main-light w-75 mx-auto my-4 rounded-4 shadow p-4">
+
+   
+    <h1 class="h2 text-center text-main f-weigh-800"> Wish List </h1>
+    <div class="row g-3">
+    @for (item of wishListList; track $index) {
+
+       
+            <div class="col-md-2 text-center">
+              <div class="shadow product ">
+                <div class="img position-relative">
+                    <img [src]="item.imageCover" class="w-100" alt="">
+                </div>
+                <h2 class="h5"> {{item.brand.name}}</h2>
+              </div>
+              
+            </div>
+     
+       
+    }
+</div>
+
+</section>
