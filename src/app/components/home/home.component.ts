@@ -78,10 +78,7 @@ WishListData:string[]=[]
     this.productListSubscription?.unsubscribe()  
     this.WishListDataSubscription?.unsubscribe()
   }
-
-
-
-
+  
 addToWishList(id:string):void{
   this._WishListService.addProductToWishList(id).subscribe({
     next:(response)=>{

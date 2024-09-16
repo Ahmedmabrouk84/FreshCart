@@ -2,49 +2,62 @@
 <section class="my-3 mb-4">
   <h2 class="text-main">Popular Products :</h2>
 
-  <div class="row g-3 ">
+  <div class="row g-3">
     @for (product of productList().slice(0,12) ; track product.id) {
 
     <div class="col-md-2">
       <div class="product cr p-2 h-100">
-        <div [routerLink]="['/details',product.id]">
-         <div class="imgcard">
-          <img [src]="product.imageCover" class="w-100" [alt]="product.title" />
-         </div>
-        
+        <div [routerLink]="['/details', product.id]">
+          <div class="imgcard">
+            <img
+              [src]="product.imageCover"
+              class="w-100"
+              [alt]="product.title"
+            />
+          </div>
+
           <div class="py-1">
             <h3 class="small text-main">{{ product.category.name }}</h3>
             <h4 class="h6">{{ product.title | termText : 2 }}</h4>
           </div>
           <div class="d-flex justify-content-between">
-            <span>{{ product.price | currency :'GBP'}}</span>
+            <span>{{ product.price | currency : "GBP" }}</span>
             <div class="">
+              @for (star of [1,2,3,4,5].slice(0,product.ratingsAverage); track
+              $index) {
+              <span class=""><i class="fas fa-star text-warning"></i></span>
+              } @if (product.ratingsAverage % 2 !== 0 ) {
+              <span class=""
+                ><i class="fa-solid fa-star-half-stroke text-warning"></i
+              ></span>
+              }
 
-              @for (star of [1,2,3,4,5].slice(0,product.ratingsAverage); track $index) {
-                <span class=""><i class="fas fa-star text-warning"></i></span>
-              }
-              @if (product.ratingsAverage % 2 !== 0 ) {
-                <span class=""><i class="fa-solid fa-star-half-stroke text-warning"></i></span>
-              }
-         
               <span class="text-muted ms-1">{{ product.ratingsAverage }} </span>
             </div>
           </div>
         </div>
+
         <span class="heart-icon">
-         
           @if (!WishListData.includes(product.id)) {
-            <i class="fa-solid fa-heart size-icon" (click)="addToWishList(product.id)"></i>
-          }
-          @else if (WishListData.includes(product.id)) {
-            <i class="fa-solid text-danger fa-heart size-icon" (click)="deletFromWishList(product.id)"></i>
+          <i
+            class="fa-solid fa-heart size-icon"
+            (click)="addToWishList(product.id)"
+          ></i>
+          } @else if (WishListData.includes(product.id)) {
+          <i
+            class="fa-solid text-danger fa-heart size-icon"
+            (click)="deletFromWishList(product.id)"
+          ></i>
           }
         </span>
-        <button class="btn-main btn-card  w-100 mt-1" (click)="addToCart(product.id)">Add To Cart</button>
+        <button
+          class="btn-main btn-card w-100 mt-1"
+          (click)="addToCart(product.id)"
+        >
+          Add To Cart
+        </button>
       </div>
     </div>
     }
   </div>
 </section>
-
-
