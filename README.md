@@ -6,7 +6,7 @@
 </p>
 <br>
 <h2>Live Demo</h2>
-<a href="https://fresh-cart-mabrouk84.netlify.app/login">Live Demo of FreshCart</a>
+<a href="https://fresh-cart-mabrouk84.netlify.app/login">FreshCart</a>
 <br>
 
 <h2> Key Features</h2>
