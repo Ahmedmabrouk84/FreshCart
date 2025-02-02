@@ -21,7 +21,7 @@
   <li>Video autoplay on hover.</li>
 </ul>
 
-<h2>Technologies Skills </h2>
+<h2>Technical Skills </h2>
 <ul>
   <li>HTML5</li>
   <li>CSS3</li>
