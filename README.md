@@ -9,15 +9,6 @@
 <br>
 <br>
 
-<h2>Technologies Skills </h2>
-<ul>
-  <li>HTML5</li>
-  <li>CSS3</li>
-  <li>Bootstrap 5</li>
-  <li>fontawesome</li>
-  <li>Responsive Web Design</li>
-  <li>Typescript</li>
-</ul>
 <h2> Key Features</h2>
 <ul>
   <li>Product Listings: Browse products with detailed descriptions, prices, and images</li>
@@ -28,4 +19,14 @@
   <li>Responsive Web Design: Compatible with all screen sizes.</li>
   <li>Loading Screen</li>
   <li>Video autoplay on hover.</li>
+</ul>
+
+<h2>Technologies Skills </h2>
+<ul>
+  <li>HTML5</li>
+  <li>CSS3</li>
+  <li>Bootstrap 5</li>
+  <li>fontawesome</li>
+  <li>Responsive Web Design</li>
+  <li>Typescript</li>
 </ul>
